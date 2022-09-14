@@ -26,9 +26,16 @@
         <div class="container-fluid page-body-wrapper">
             <div class="container" align="center" style="padding-top: 100px;">
                 @if (session()->has('message'))
-                    <div class="alert alert-success">
-                        <button type="button" class="close" data-bs-dismiss="alert">x</button>
-                        {{ session()->get('message') }}
+                    <div class="container">
+                        <div class="row alert alert-success">
+                            <div class="col-sm text-right">
+                                {{ session()->get('message') }}
+                            </div>
+                            <div class="col-sm text-right">
+                                <button type="button" class="btn-close btn-close" aria-label="Close"
+                                    data-bs-dismiss="alert">X</button>
+                            </div>
+                        </div>
                     </div>
                 @endif
                 <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
@@ -40,7 +47,8 @@
 
                     <div style="padding: 15px;">
                         <label>Phone</label>
-                        <input type="number" style="color:black;" name="number" placeholder="Write the number" required>
+                        <input type="number" style="color:black;" name="number" placeholder="Write the number"
+                            required>
                     </div>
 
                     <div style="padding: 15px;">
@@ -56,7 +64,8 @@
 
                     <div style="padding: 15px;">
                         <label>Room No</label>
-                        <input type="text" style="color:black;" name="room" placeholder="Write the room number" required>
+                        <input type="text" style="color:black;" name="room" placeholder="Write the room number"
+                            required>
                     </div>
 
                     <div style="padding: 15px;">
